@@ -1,0 +1,15 @@
+current directory: /Users/nakayamaakinori/Documents/test/hogehoge/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+/Users/nakayamaakinori/.rbenv/versions/2.4.4/bin/ruby -r ./siteconf20190402-32892-v8o6dv.rb extconf.rb
+creating Makefile
+
+current directory: /Users/nakayamaakinori/Documents/test/hogehoge/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/nakayamaakinori/Documents/test/hogehoge/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/nakayamaakinori/Documents/test/hogehoge/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190402-32892-1iroocy/bootsnap
