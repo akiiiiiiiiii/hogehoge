@@ -6,35 +6,25 @@
       <th style="width: 40px">No.</th>
       <th style="width: 200px">タイトル</th>
       <th style="width: 300px">説明</th>
-      <th>投稿者</th>
       <th>投稿日</th>
       <th>更新日時</th>
+      <th>詳細</th>
+      <th>編集</th>
+      <th>削除</th>
     </tr>
   </thead>
   <tbody>
+    <% @books.each do |book| %>
     <tr>
-      <th>1</th>
-      <td>Test1</td>
-      <td>Test1</td>
-      <td>hoge</td>
-      <td>2019/11/1</td>
-      <td>2019/11/1</td>
+      <th><%= book.id %></th>
+      <th><%= book.title %></th>
+      <td><%= book.description %></td>
+      <td><%= book.created_at %></td>
+      <td><%= book.updated_at %></td>
+      <td><%= link_to 'Show', book %></td>
+      <td><%= link_to 'Edit', edit_book_path(book) %></td>
+      <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }%></td>
     </tr>
-    <tr>
-      <th>2</th>
-      <td>Test1</td>
-      <td>Test1</td>
-      <td>hoge</td>
-      <td>2019/11/1</td>
-      <td>2019/11/1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Test1</td>
-      <td>Test1</td>
-      <td>hoge</td>
-      <td>2019/11/1</td>
-      <td>2019/11/1</td>
-    </tr>
+    <% end %>
   </tbody>
 </table>

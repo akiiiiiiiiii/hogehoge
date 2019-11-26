@@ -1,0 +1,29 @@
+<h1>編集</h1>
+
+<table>
+  <thead class="thead-dark">
+    <tr>
+      <th style="width: 40px">No.</th>
+      <th style="width: 200px">タイトル</th>
+      <th style="width: 300px">説明</th>
+      <th>投稿日</th>
+      <th>更新日時</th>
+      <th>詳細</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <%= form_for @book do |f| %>
+      <th><%= @book.id %></th>
+      <th><%= f.text_field :title, value: @book.title %></th>
+      <td><%= f.text_area :description, value: @book.description %></td>
+      <td><%= @book.created_at %></td>
+      <td><%= @book.updated_at %></td>
+      <td><%= link_to 'Show', @book %></td>
+      <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+      <td><%= f.submit "更新", class: "btn btn-primary" %></td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
