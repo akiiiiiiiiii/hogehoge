@@ -1,6 +1,6 @@
 <h1>新規登録</h1>
 
-<%= form_for @book, url: books_new_path do |f| %>
+<%= form_for @book do |f| %>
   <div>
     <%= f.label :title, 'タイトル' %>
     <%= f.text_field :title %>
