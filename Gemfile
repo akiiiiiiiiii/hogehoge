@@ -50,6 +50,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-byebug'
   gem 'bootstrap', '~>4.0.0'
+  gem 'paranoia', '~> 2.3', '>= 2.3.1'
 end
 
 group :test do
