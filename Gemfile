@@ -51,6 +51,8 @@ group :development do
   gem 'pry-byebug'
   gem 'better_errors'
   gem 'rspec-rails'
+  gem 'bootstrap', '~>4.0.0'
+  gem 'paranoia', '~> 2.3', '>= 2.3.1'
 end
 
 group :test do
