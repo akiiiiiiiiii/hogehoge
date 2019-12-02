@@ -49,6 +49,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-byebug'
+  gem 'better_errors'
+  gem 'rspec-rails'
   gem 'bootstrap', '~>4.0.0'
   gem 'paranoia', '~> 2.3', '>= 2.3.1'
 end
