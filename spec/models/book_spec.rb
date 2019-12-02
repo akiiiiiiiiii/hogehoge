@@ -7,6 +7,6 @@ RSpec.describe Book, type: :model do
         title: "hoge",
         description: "hoge"
       )
+      expect(book).to be_valid
     end
-
 end
