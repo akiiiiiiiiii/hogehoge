@@ -2,8 +2,16 @@
     <i class="fas fa-book fa-2x" ></i>
     <h1>Books一覧</h1>
     <div class="ml-auto posts_button">
-        <a class="btn btn-primary" href="/books/new" role="button">登録</a>
+        <a class="btn btn-primary" href="/books/new" role="button">Book登録</a>
     </div>
+
+  <% if user_signed_in? %>
+    <%= link_to 'プロフィール変更', edit_user_registration_path %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'ユーザー登録', new_user_registration_path %>
+    <%= link_to 'ログイン', new_user_session_path %>
+  <% end %>
 </div>
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
   <thead class="thead-dark">
