@@ -10,7 +10,30 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
 
-  <body style="margin: 20px">
+  <nav class="navbar navbar-dark bg-dark" role="navigation">
+    <div class="d-flex align-items-center">
+      <%= link_to 'BookManagement', root_path, class: "title" %>
+    </div>
+    <div class="ml-auto posts_button">
+      <a class="btn btn-primary" href="/books/new" role="button">Book登録</a>
+      <% if user_signed_in? %>
+        <%= link_to 'プロフィール変更', edit_user_registration_path, class: "btn btn-primary" %>
+        <%= link_to 'マイページ', "/user/#{current_user.id}", class: "btn btn-primary" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to 'ユーザー登録', new_user_registration_path, class: "btn btn-primary" %>
+        <%= link_to 'ログイン',new_user_session_path,class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </nav>
+
+
+
+  <body>
     <%= yield %>
   </body>
+
+  <footer class="fixed-bottom">
+      powered by <a href="http://regulus-technologies.co.jp/"><%= image_tag('footer__img.png', class: 'logo') %></a>
+  </footer>
 </html>

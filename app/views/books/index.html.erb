@@ -1,18 +1,8 @@
 <div class="d-flex align-items-center">
-    <i class="fas fa-book fa-2x" ></i>
-    <h1>Books一覧</h1>
-    <div class="ml-auto posts_button">
-        <a class="btn btn-primary" href="/books/new" role="button">Book登録</a>
-    </div>
-
-  <% if user_signed_in? %>
-    <%= link_to 'プロフィール変更', edit_user_registration_path, class: "btn btn-primary" %>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-  <% else %>
-    <%= link_to 'ユーザー登録', new_user_registration_path, class: "btn btn-primary" %>
-    <%= link_to 'ログイン',new_user_session_path,class: "btn btn-primary" %>
-  <% end %>
+  <i class="fas fa-book fa-2x" ></i>
+  <h1>Books一覧</h1>
 </div>
+
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
   <thead class="thead-dark">
     <tr>
