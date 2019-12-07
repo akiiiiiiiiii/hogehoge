@@ -21,6 +21,15 @@
 
 .fixed-bottom {
   background-color: black;
+  color: #FFF;
+  text-align: center;
+}
+
+.dvice_form {
+  border : solid 1px #333 ;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
 }
 
 @import "bootstrap";
