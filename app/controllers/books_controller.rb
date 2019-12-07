@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   def index
     @q = Book.ransack(params[:q])
     @books = @q.result(distinct: true).page(params[:page]).per(10)
+    @impressions_count = Impression.where(book_id: @q.id).count
   end
 
   def new
@@ -20,6 +21,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @impressions = @book.impressions
+    @impression = Impression.new
   end
 
   def edit

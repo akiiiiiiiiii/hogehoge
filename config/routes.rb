@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     patch "update", :to => "users/registrations#profile_update"
   end
 
-  resources :books
+  resources :books do
+    resources :impressions, :only => [:create, :destroy]
+  end
+
   root 'books#index'
+
 end
