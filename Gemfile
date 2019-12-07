@@ -53,6 +53,7 @@ group :development do
   gem 'paranoia', '~> 2.3', '>= 2.3.1'
   gem 'devise'
   gem 'kaminari'
+  gem 'ransack'
 end
 
 group :test do
