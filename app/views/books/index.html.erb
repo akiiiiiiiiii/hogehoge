@@ -1,21 +1,21 @@
 <div class="d-flex align-items-center">
-  <i class="fas fa-book fa-2x" ></i>
   <h1>Books一覧</h1>
   <a class="btn btn-primary" href="/books/new" role="button">Book登録</a>
 </div>
+
+<div class="search_form">
+  <%= search_form_for @q do |f| %>
+    <%= f.label :title, "タイトル" %>
+    <%= f.search_field :title_cont %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>
+
+<div class="paginate">
+  <%= paginate @books %>
+</div>
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
-  <thead class="thead-dark">
-    <tr>
-      <th style="width: 40px">No.</th>
-      <th style="width: 200px">タイトル</th>
-      <th style="width: 300px">説明</th>
-      <th>投稿日</th>
-      <th>更新日時</th>
-      <th>詳細</th>
-      <th>編集</th>
-      <th>削除</th>
-    </tr>
-  </thead>
+  <%= render "table_head" %>
   <tbody>
     <% @books.each do |book| %>
     <tr>
@@ -24,9 +24,11 @@
       <td><%= book.description %></td>
       <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
       <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-      <td><%= link_to '詳細', book %></td>
-      <td><%= link_to '編集', edit_book_path(book) %></td>
-      <td><%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+      <td>
+        <%= link_to '詳細', book, class: "btn btn-primary" %>
+        <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
+        <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      </td>
     </tr>
     <% end %>
   </tbody>

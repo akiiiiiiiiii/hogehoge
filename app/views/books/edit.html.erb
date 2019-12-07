@@ -1,18 +1,7 @@
 <h1>編集</h1>
 
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
-  <thead class="thead-dark">
-    <tr>
-      <th style="width: 40px">No.</th>
-      <th style="width: 200px">タイトル</th>
-      <th style="width: 300px">説明</th>
-      <th>投稿日</th>
-      <th>更新日時</th>
-      <th>詳細</th>
-      <th>削除</th>
-      <th>更新</th>
-    </tr>
-  </thead>
+  <%= render "table_head" %>
   <tbody>
     <tr>
     <%= form_for @book do |f| %>
@@ -21,9 +10,11 @@
       <td><%= f.text_area :description, value: @book.description %></td>
       <td><%= @book.created_at %></td>
       <td><%= @book.updated_at %></td>
-      <td><%= link_to 'Show', @book %></td>
-      <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' }%></td>
-      <td><%= f.submit "更新", class: "btn btn-primary" %></td>
+      <td>
+        <%= link_to '詳細', @book, class: "btn btn-primary" %>
+        <%= f.submit "更新", class: "btn btn-primary" %>
+        <%= link_to '削除', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      </td>
     <% end %>
     </tr>
   </tbody>
