@@ -52,6 +52,7 @@ group :development do
   gem 'bootstrap', '~>4.0.0'
   gem 'paranoia', '~> 2.3', '>= 2.3.1'
   gem 'devise'
+  gem 'kaminari'
 end
 
 group :test do
