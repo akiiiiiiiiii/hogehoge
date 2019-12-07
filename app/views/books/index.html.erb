@@ -1,11 +1,11 @@
-<div class="d-flex align-items-center">
+<div class="d-flex align-items-center"  style="margin-top: 70px;" >
   <h1>Books一覧</h1>
-  <a class="btn btn-primary" href="/books/new" role="button">Book登録</a>
+  <a class="btn btn-primary" href="/books/new" role="button" style="margin: 30px 10px 10px 30px;">Book登録</a>
 </div>
 
 <div class="search_form">
   <%= search_form_for @q do |f| %>
-    <%= f.label :title, "タイトル" %>
+    <%= f.label :title, "タイトル検索" %>
     <%= f.search_field :title_cont %>
     <%= f.submit "検索" %>
   <% end %>
@@ -14,6 +14,7 @@
 <div class="paginate">
   <%= paginate @books %>
 </div>
+
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
   <%= render "table_head" %>
   <tbody>
@@ -32,5 +33,4 @@
     </tr>
     <% end %>
   </tbody>
-  <%= paginate @books %>
 </table>
