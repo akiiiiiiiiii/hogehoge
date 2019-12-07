@@ -51,6 +51,7 @@ group :development do
   gem 'pry-byebug'
   gem 'bootstrap', '~>4.0.0'
   gem 'paranoia', '~> 2.3', '>= 2.3.1'
+  gem 'devise'
 end
 
 group :test do
