@@ -1,6 +1,5 @@
 class Book < ApplicationRecord
   validates :title, presence: true
 
-  belongs_to :user
-  has_many :impressions
+  has_many :impressions, dependent: :destroy
 end
