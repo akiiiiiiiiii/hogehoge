@@ -54,6 +54,7 @@ group :development do
   gem 'devise'
   gem 'kaminari'
   gem 'ransack'
+  gem 'seed-fu'
 end
 
 group :test do
