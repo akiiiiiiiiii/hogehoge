@@ -54,6 +54,8 @@ group :development do
   gem 'devise'
   gem 'kaminari'
   gem 'ransack'
+  gem 'jquery-rails'
+  gem 'font-awesome-rails'
 end
 
 group :test do

@@ -20,13 +20,67 @@
         <%= link_to 'マイページ', "/user/#{current_user.id}", class: "btn btn-primary" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
       <% else %>
-        <%= link_to 'ユーザー登録', new_user_registration_path, class: "btn btn-primary" %>
-        <%= link_to 'ログイン',new_user_session_path,class: "btn btn-primary" %>
+        <div class="sign_button sign_up_button">
+          ユーザー登録
+        </div>
+        <div class="sign_button sign_in_button">
+          ログイン
+        </div>
       <% end %>
     </div>
   </nav>
 
   <body>
+    <div class="sign_modal_wrapper"></div>
+    <div class="sign_modal">
+      <span class="fa_wrapper"><%= fa_icon "times" %></span>
+      <div class="sign_up_modal sign_modal_content">
+        <h2>ユーザー登録</h2>
+        <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="zqXi7cCIDSlo7xmO3GEnYG2ybcB/zfva3IwOMhBzjC4AG5mQDVvBUxXHjJSGZ8mM4xUpdEmm38ODUV+MMsPNDQ==">
+          <div class="field">
+            <label for="user_name">Name</label><br>
+            <input autofocus="autofocus" type="text" name="user[name]" id="user_name">
+          </div>
+          <div class="field">
+            <label for="user_email">Email</label><br>
+            <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email">
+          </div>
+          <div class="field">
+            <label for="user_password">Password</label>
+            <em>(6 characters minimum)</em>
+            <br>
+            <input autocomplete="new-password" type="password" name="user[password]" id="user_password">
+          </div>
+          <div class="field">
+            <label for="user_password_confirmation">Password confirmation</label><br>
+            <input autocomplete="new-password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+          </div>
+          <div class="actions">
+            <input type="submit" name="commit" value="Sign up" data-disable-with="Sign up">
+          </div>
+        </form>
+      </div>
+      <div class="sign_in_modal sign_modal_content">
+        <h2>ログイン</h2>
+        <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="99r+KkfrEUO45Q6l0nDpZs9CFBOxngsVp9/JeSA59Kc5ZIVXijjdOcXNm7+IdgeKQeVQp4f1Lwz4ApjHAom1hA==">
+          <div class="field">
+            <label for="user_email">Email</label><br>
+            <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email">
+          </div>
+          <div class="field">
+            <label for="user_password">Password</label><br>
+            <input autocomplete="current-password" type="password" name="user[password]" id="user_password">
+          </div>
+          <div class="field">
+            <input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
+            <label for="user_remember_me">Remember me</label>
+          </div>
+          <div class="actions">
+            <input type="submit" name="commit" value="Log in" data-disable-with="Log in">
+          </div>
+        </form>
+      </div>
+    </div>
     <%= yield %>
   </body>
 
