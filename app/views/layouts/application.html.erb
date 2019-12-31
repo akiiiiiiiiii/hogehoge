@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
@@ -26,11 +26,13 @@
         <div class="sign_button sign_in_button">
           ログイン
         </div>
+
       <% end %>
     </div>
   </nav>
 
   <body>
+
     <div class="sign_modal_wrapper"></div>
     <div class="sign_modal">
       <span class="fa_wrapper"><%= fa_icon "times" %></span>
@@ -79,6 +81,7 @@
             <input type="submit" name="commit" value="Log in" data-disable-with="Log in">
           </div>
         </form>
+
       </div>
     </div>
     <%= yield %>

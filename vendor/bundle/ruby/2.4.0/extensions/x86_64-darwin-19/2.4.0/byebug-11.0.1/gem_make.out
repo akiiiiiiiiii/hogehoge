@@ -1,5 +1,7 @@
 current directory: /Users/nakayamaakinori/Documents/github/hogehoge/vendor/bundle/ruby/2.4.0/gems/byebug-11.0.1/ext/byebug
+
 /Users/nakayamaakinori/.rbenv/versions/2.4.4/bin/ruby -r ./siteconf20191229-75769-1gxf165.rb extconf.rb
+
 creating Makefile
 
 current directory: /Users/nakayamaakinori/Documents/github/hogehoge/vendor/bundle/ruby/2.4.0/gems/byebug-11.0.1/ext/byebug
@@ -16,4 +18,5 @@ linking shared-object byebug/byebug.bundle
 
 current directory: /Users/nakayamaakinori/Documents/github/hogehoge/vendor/bundle/ruby/2.4.0/gems/byebug-11.0.1/ext/byebug
 make "DESTDIR=" install
+
 /usr/bin/install -c -m 0755 byebug.bundle ./.gem.20191229-75769-te0wu3/byebug

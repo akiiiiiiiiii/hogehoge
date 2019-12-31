@@ -74,7 +74,7 @@ OUTFLAG = -o $(empty)
 COUTFLAG = -o $(empty)
 CSRCFLAG = $(empty)
 
-RUBY_EXTCONF_H = 
+RUBY_EXTCONF_H =
 cflags   = $(optflags) $(debugflags) $(warnflags)
 cxxflags = $(optflags) $(debugflags) $(warnflags)
 optflags = -O3 -fno-fast-math -fno-strict-aliasing
@@ -83,21 +83,21 @@ warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long 
 CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -fno-common -pipe $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
-DEFS     = 
+DEFS     =
 CPPFLAGS = -DHAVE_UNISTD_H -DHAVE_SYS_SELECT_H -DEV_USE_SELECT -DHAVE_SYS_EVENT_H -DHAVE_SYS_QUEUE_H -DEV_USE_KQUEUE -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_RESOURCE_H -I/Users/nakayamaakinori/.rbenv/versions/2.4.4/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
 ldflags  = -L. -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -fstack-protector -L/usr/local/lib
-dldflags = -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
-ARCH_FLAG = 
+dldflags = -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress
+ARCH_FLAG =
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -dynamic -bundle
 LDSHAREDXX = $(CXX) -dynamic -bundle
 AR = libtool -static
-EXEEXT = 
+EXEEXT =
 
 RUBY_INSTALL_NAME = $(RUBY_BASE_NAME)
 RUBY_SO_NAME = ruby.2.4.4
-RUBYW_INSTALL_NAME = 
+RUBYW_INSTALL_NAME =
 RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
@@ -121,31 +121,31 @@ TOUCH = exit >
 
 #### End of system configuration section. ####
 
-preload = 
+preload =
 libpath = . $(libdir)
 LIBPATH =  -L. -L$(libdir)
-DEFFILE = 
+DEFFILE =
 
 CLEANFILES = mkmf.log
-DISTCLEANFILES = 
-DISTCLEANDIRS = 
+DISTCLEANFILES =
+DISTCLEANDIRS =
 
-extout = 
-extout_prefix = 
-target_prefix = 
-LOCAL_LIBS = 
-LIBS = $(LIBRUBYARG_SHARED)  -lpthread -lgmp -ldl -lobjc 
+extout =
+extout_prefix =
+target_prefix =
+LOCAL_LIBS =
+LIBS = $(LIBRUBYARG_SHARED)  -lpthread -lgmp -ldl -lobjc
 ORIG_SRCS = bytebuffer.c monitor.c nio4r_ext.c selector.c
-SRCS = $(ORIG_SRCS) 
+SRCS = $(ORIG_SRCS)
 OBJS = bytebuffer.o monitor.o nio4r_ext.o selector.o
 HDRS = $(srcdir)/nio4r.h $(srcdir)/libev.h
-LOCAL_HDRS = 
+LOCAL_HDRS =
 TARGET = nio4r_ext
 TARGET_NAME = nio4r_ext
 TARGET_ENTRY = Init_$(TARGET_NAME)
 DLLIB = $(TARGET).bundle
-EXTSTATIC = 
-STATIC_LIB = 
+EXTSTATIC =
+STATIC_LIB =
 
 TIMESTAMP_DIR = .
 BINDIR        = $(bindir)
@@ -156,7 +156,7 @@ HDRDIR        = $(rubyhdrdir)/ruby$(target_prefix)
 ARCHHDRDIR    = $(rubyhdrdir)/$(arch)/ruby$(target_prefix)
 TARGET_SO_DIR =
 TARGET_SO     = $(TARGET_SO_DIR)$(DLLIB)
-CLEANLIBS     = $(TARGET_SO) 
+CLEANLIBS     = $(TARGET_SO)
 CLEANOBJS     = *.o  *.bak
 
 all:    $(DLLIB)

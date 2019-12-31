@@ -74,7 +74,7 @@ OUTFLAG = -o $(empty)
 COUTFLAG = -o $(empty)
 CSRCFLAG = $(empty)
 
-RUBY_EXTCONF_H = 
+RUBY_EXTCONF_H =
 cflags   = $(optflags) $(debugflags) $(warnflags)
 cxxflags = $(optflags) $(debugflags) $(warnflags)
 optflags = -O3 -fno-fast-math
@@ -83,21 +83,21 @@ warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long 
 CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -fno-common -pipe  $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) -I/usr/local/Cellar/sqlite/3.30.1/include
-DEFS     = 
+DEFS     =
 CPPFLAGS = -DHAVE_DLOPEN -DHAVE_DLCLOSE -DHAVE_DLSYM -DHAVE_RB_PROC_ARITY -DHAVE_RB_INTEGER_PACK -DHAVE_SQLITE3_INITIALIZE -DHAVE_SQLITE3_BACKUP_INIT -DHAVE_SQLITE3_COLUMN_DATABASE_NAME -DHAVE_SQLITE3_ENABLE_LOAD_EXTENSION -DHAVE_SQLITE3_LOAD_EXTENSION -DHAVE_SQLITE3_OPEN_V2 -DHAVE_SQLITE3_PREPARE_V2 -DHAVE_TYPE_SQLITE3_INT64 -DHAVE_TYPE_SQLITE3_UINT64 -I/usr/local/opt/sqlite/include -I/Users/nakayamaakinori/.rbenv/versions/2.4.4/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags)  $(ARCH_FLAG)
 ldflags  = -L. -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -fstack-protector -L/usr/local/lib -L/usr/local/Cellar/sqlite/3.30.1/lib
-dldflags = -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
-ARCH_FLAG = 
+dldflags = -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress
+ARCH_FLAG =
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -dynamic -bundle
 LDSHAREDXX = $(CXX) -dynamic -bundle
 AR = libtool -static
-EXEEXT = 
+EXEEXT =
 
 RUBY_INSTALL_NAME = $(RUBY_BASE_NAME)
 RUBY_SO_NAME = ruby.2.4.4
-RUBYW_INSTALL_NAME = 
+RUBYW_INSTALL_NAME =
 RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
@@ -121,31 +121,31 @@ TOUCH = exit >
 
 #### End of system configuration section. ####
 
-preload = 
+preload =
 libpath = . $(libdir) /usr/local/opt/sqlite/lib
 LIBPATH =  -L. -L$(libdir) -L/usr/local/opt/sqlite/lib
-DEFFILE = 
+DEFFILE =
 
 CLEANFILES = mkmf.log
-DISTCLEANFILES = 
-DISTCLEANDIRS = 
+DISTCLEANFILES =
+DISTCLEANDIRS =
 
-extout = 
-extout_prefix = 
+extout =
+extout_prefix =
 target_prefix = /sqlite3
-LOCAL_LIBS = 
-LIBS = $(LIBRUBYARG_SHARED) -lsqlite3 -ldl -lpthread  -lsqlite3 -lpthread -lgmp -ldl -lobjc 
+LOCAL_LIBS =
+LIBS = $(LIBRUBYARG_SHARED) -lsqlite3 -ldl -lpthread  -lsqlite3 -lpthread -lgmp -ldl -lobjc
 ORIG_SRCS = aggregator.c backup.c database.c exception.c sqlite3.c statement.c
-SRCS = $(ORIG_SRCS) 
+SRCS = $(ORIG_SRCS)
 OBJS = aggregator.o backup.o database.o exception.o sqlite3.o statement.o
 HDRS = $(srcdir)/statement.h $(srcdir)/backup.h $(srcdir)/database.h $(srcdir)/sqlite3_ruby.h $(srcdir)/aggregator.h $(srcdir)/exception.h
-LOCAL_HDRS = 
+LOCAL_HDRS =
 TARGET = sqlite3_native
 TARGET_NAME = sqlite3_native
 TARGET_ENTRY = Init_$(TARGET_NAME)
 DLLIB = $(TARGET).bundle
-EXTSTATIC = 
-STATIC_LIB = 
+EXTSTATIC =
+STATIC_LIB =
 
 TIMESTAMP_DIR = .
 BINDIR        = $(bindir)
@@ -156,7 +156,7 @@ HDRDIR        = $(rubyhdrdir)/ruby$(target_prefix)
 ARCHHDRDIR    = $(rubyhdrdir)/$(arch)/ruby$(target_prefix)
 TARGET_SO_DIR =
 TARGET_SO     = $(TARGET_SO_DIR)$(DLLIB)
-CLEANLIBS     = $(TARGET_SO) 
+CLEANLIBS     = $(TARGET_SO)
 CLEANOBJS     = *.o  *.bak
 
 all:    $(DLLIB)

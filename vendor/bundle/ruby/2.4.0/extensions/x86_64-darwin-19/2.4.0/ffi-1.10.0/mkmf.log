@@ -6,7 +6,7 @@ have_header: checking for ffi.h... -------------------- no
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: int main(int argc, char **argv)
 4: {
 5:   return 0;
@@ -21,7 +21,7 @@ conftest.c:3:10: fatal error: 'ffi.h' file not found
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: #include <ffi.h>
 /* end */
 
@@ -37,7 +37,7 @@ conftest.c:3:10: fatal error: 'ffi.h' file not found
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: #include <ffi.h>
 /* end */
 
@@ -49,7 +49,7 @@ conftest.c:3:10: fatal error: 'ffi.h' file not found
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: #include <ffi.h>
 /* end */
 
@@ -61,7 +61,7 @@ conftest.c:3:10: fatal error: 'ffi.h' file not found
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: #include <ffi.h>
 /* end */
 
@@ -77,7 +77,7 @@ conftest.c:3:10: fatal error: 'shlwapi.h' file not found
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: #include <shlwapi.h>
 /* end */
 
@@ -89,7 +89,7 @@ have_header: checking for ruby/thread.h... -------------------- yes
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: #include <ruby/thread.h>
 /* end */
 
@@ -105,7 +105,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_regio
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -113,7 +113,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return !p; }
@@ -123,12 +123,13 @@ checked program was:
 Undefined symbols for architecture x86_64:
   "_rb_thread_blocking_region", referenced from:
       _t in conftest-00fdae.o
+
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -136,7 +137,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void rb_thread_blocking_region();
@@ -155,7 +156,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_with_gvl;
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -163,7 +164,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_with_gvl; return !p; }
@@ -173,7 +174,7 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -181,7 +182,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void rb_thread_call_with_gvl();
@@ -200,7 +201,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_g
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -208,7 +209,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_gvl; return !p; }
@@ -218,7 +219,7 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -226,7 +227,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void rb_thread_call_without_gvl();
@@ -247,4 +248,3 @@ extconf.h is:
 8: #define RUBY_1_9 1
 9: #endif
 /* end */
-

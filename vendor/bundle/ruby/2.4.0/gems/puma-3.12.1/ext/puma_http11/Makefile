@@ -74,7 +74,7 @@ OUTFLAG = -o $(empty)
 COUTFLAG = -o $(empty)
 CSRCFLAG = $(empty)
 
-RUBY_EXTCONF_H = 
+RUBY_EXTCONF_H =
 cflags   = $(optflags) $(debugflags) $(warnflags)
 cxxflags = $(optflags) $(debugflags) $(warnflags)
 optflags = -O3 -fno-fast-math
@@ -83,21 +83,21 @@ warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long 
 CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -fno-common -pipe $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
-DEFS     = 
+DEFS     =
 CPPFLAGS = -DHAVE_OPENSSL_BIO_H -I/Users/nakayamaakinori/.rbenv/versions/2.4.4/openssl/include -I/Users/nakayamaakinori/.rbenv/versions/2.4.4/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
 ldflags  = -L. -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -fstack-protector -L/usr/local/lib
-dldflags = -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
-ARCH_FLAG = 
+dldflags = -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress
+ARCH_FLAG =
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -dynamic -bundle
 LDSHAREDXX = $(CXX) -dynamic -bundle
 AR = libtool -static
-EXEEXT = 
+EXEEXT =
 
 RUBY_INSTALL_NAME = $(RUBY_BASE_NAME)
 RUBY_SO_NAME = ruby.2.4.4
-RUBYW_INSTALL_NAME = 
+RUBYW_INSTALL_NAME =
 RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
@@ -121,31 +121,31 @@ TOUCH = exit >
 
 #### End of system configuration section. ####
 
-preload = 
+preload =
 libpath = . $(libdir) /Users/nakayamaakinori/.rbenv/versions/2.4.4/openssl/lib
 LIBPATH =  -L. -L$(libdir) -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/openssl/lib
-DEFFILE = 
+DEFFILE =
 
 CLEANFILES = mkmf.log
-DISTCLEANFILES = 
-DISTCLEANDIRS = 
+DISTCLEANFILES =
+DISTCLEANDIRS =
 
-extout = 
-extout_prefix = 
+extout =
+extout_prefix =
 target_prefix = /puma
-LOCAL_LIBS = 
-LIBS = $(LIBRUBYARG_SHARED) -lssl -lcrypto  -lpthread -lgmp -ldl -lobjc 
+LOCAL_LIBS =
+LIBS = $(LIBRUBYARG_SHARED) -lssl -lcrypto  -lpthread -lgmp -ldl -lobjc
 ORIG_SRCS = http11_parser.c io_buffer.c mini_ssl.c puma_http11.c
-SRCS = $(ORIG_SRCS) 
+SRCS = $(ORIG_SRCS)
 OBJS = http11_parser.o io_buffer.o mini_ssl.o puma_http11.o
 HDRS = $(srcdir)/http11_parser.h $(srcdir)/ext_help.h
-LOCAL_HDRS = 
+LOCAL_HDRS =
 TARGET = puma_http11
 TARGET_NAME = puma_http11
 TARGET_ENTRY = Init_$(TARGET_NAME)
 DLLIB = $(TARGET).bundle
-EXTSTATIC = 
-STATIC_LIB = 
+EXTSTATIC =
+STATIC_LIB =
 
 TIMESTAMP_DIR = .
 BINDIR        = $(bindir)
@@ -156,7 +156,7 @@ HDRDIR        = $(rubyhdrdir)/ruby$(target_prefix)
 ARCHHDRDIR    = $(rubyhdrdir)/$(arch)/ruby$(target_prefix)
 TARGET_SO_DIR =
 TARGET_SO     = $(TARGET_SO_DIR)$(DLLIB)
-CLEANLIBS     = $(TARGET_SO) 
+CLEANLIBS     = $(TARGET_SO)
 CLEANOBJS     = *.o  *.bak
 
 all:    $(DLLIB)

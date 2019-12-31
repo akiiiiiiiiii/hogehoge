@@ -2,7 +2,7 @@
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: int main(int argc, char **argv)
 4: {
 5:   return 0;
@@ -13,7 +13,7 @@ checked program was:
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: int main() {return 0;}
 /* end */
 
@@ -22,7 +22,7 @@ error: unknown warning option '-Werror=unused-command-line-argument-hard-error-i
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: int main() {return 0;}
 /* end */
 
@@ -32,7 +32,7 @@ have_header: checking for iconv.h... -------------------- yes
 checked program was:
 /* begin */
 1: #include "ruby.h"
-2: 
+2:
 3: #include <iconv.h>
 /* end */
 
@@ -44,9 +44,9 @@ have_library: checking for gzdopen() in -lz... -------------------- yes
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: #include <zlib.h>
- 4: 
+ 4:
  5: /*top*/
  6: extern int t(void);
  7: int main(int argc, char **argv)
@@ -54,7 +54,7 @@ checked program was:
  9:   if (argc > 1000000) {
 10:     printf("%p", &t);
 11:   }
-12: 
+12:
 13:   return 0;
 14: }
 15: int t(void) { void ((*volatile p)()); p = (void ((*)()))gzdopen; return !p; }
@@ -75,10 +75,10 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: #include <stdlib.h>
  4: #include <iconv.h>
- 5: 
+ 5:
  6: int main(void)
  7: {
  8:     iconv_t cd = iconv_open("", "");
@@ -91,10 +91,10 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: #include <stdlib.h>
  4: #include <iconv.h>
- 5: 
+ 5:
  6: int main(void)
  7: {
  8:     iconv_t cd = iconv_open("", "");
@@ -111,7 +111,7 @@ have_library: checking for -llzma... -------------------- yes
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -119,10 +119,10 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
-13: 
+13:
 14: int t(void) { ; return 0; }
 /* end */
 
@@ -134,9 +134,9 @@ have_func: checking for xmlParseDoc() in libxml/parser.h... --------------------
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: #include <libxml/parser.h>
- 4: 
+ 4:
  5: /*top*/
  6: extern int t(void);
  7: int main(int argc, char **argv)
@@ -144,7 +144,7 @@ checked program was:
  9:   if (argc > 1000000) {
 10:     printf("%p", &t);
 11:   }
-12: 
+12:
 13:   return 0;
 14: }
 15: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return !p; }
@@ -162,9 +162,9 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; 
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: #include <libxslt/xslt.h>
- 4: 
+ 4:
  5: /*top*/
  6: extern int t(void);
  7: int main(int argc, char **argv)
@@ -172,7 +172,7 @@ checked program was:
  9:   if (argc > 1000000) {
 10:     printf("%p", &t);
 11:   }
-12: 
+12:
 13:   return 0;
 14: }
 15: int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return !p; }
@@ -182,9 +182,9 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: #include <libxslt/xslt.h>
- 4: 
+ 4:
  5: /*top*/
  6: extern int t(void);
  7: int main(int argc, char **argv)
@@ -192,7 +192,7 @@ checked program was:
  9:   if (argc > 1000000) {
 10:     printf("%p", &t);
 11:   }
-12: 
+12:
 13:   return 0;
 14: }
 15: extern void xsltParseStylesheetDoc();
@@ -207,9 +207,9 @@ have_func: checking for exsltFuncRegister() in libexslt/exslt.h... -------------
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: #include <libexslt/exslt.h>
- 4: 
+ 4:
  5: /*top*/
  6: extern int t(void);
  7: int main(int argc, char **argv)
@@ -217,7 +217,7 @@ checked program was:
  9:   if (argc > 1000000) {
 10:     printf("%p", &t);
 11:   }
-12: 
+12:
 13:   return 0;
 14: }
 15: int t(void) { void ((*volatile p)()); p = (void ((*)()))exsltFuncRegister; return !p; }
@@ -235,7 +235,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlHasFeature; return !p
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -243,7 +243,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlHasFeature; return !p; }
@@ -253,7 +253,7 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -261,7 +261,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void xmlHasFeature();
@@ -280,7 +280,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlFirstElementChild; re
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -288,7 +288,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlFirstElementChild; return !p; }
@@ -298,7 +298,7 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -306,7 +306,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void xmlFirstElementChild();
@@ -325,7 +325,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStruc
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -333,7 +333,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return !p; }
@@ -343,7 +343,7 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -351,7 +351,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void xmlRelaxNGSetParserStructuredErrors();
@@ -370,7 +370,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStruc
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -378,7 +378,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return !p; }
@@ -388,7 +388,7 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -396,7 +396,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void xmlRelaxNGSetParserStructuredErrors();
@@ -415,7 +415,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetValidStruct
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -423,7 +423,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetValidStructuredErrors; return !p; }
@@ -433,7 +433,7 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -441,7 +441,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void xmlRelaxNGSetValidStructuredErrors();
@@ -460,7 +460,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetValidStructu
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -468,7 +468,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetValidStructuredErrors; return !p; }
@@ -478,7 +478,7 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -486,7 +486,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void xmlSchemaSetValidStructuredErrors();
@@ -505,7 +505,7 @@ int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetParserStruct
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -513,7 +513,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetParserStructuredErrors; return !p; }
@@ -523,7 +523,7 @@ checked program was:
 checked program was:
 /* begin */
  1: #include "ruby.h"
- 2: 
+ 2:
  3: /*top*/
  4: extern int t(void);
  5: int main(int argc, char **argv)
@@ -531,7 +531,7 @@ checked program was:
  7:   if (argc > 1000000) {
  8:     printf("%p", &t);
  9:   }
-10: 
+10:
 11:   return 0;
 12: }
 13: extern void xmlSchemaSetParserStructuredErrors();
@@ -539,4 +539,3 @@ checked program was:
 /* end */
 
 --------------------
-

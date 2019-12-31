@@ -79,25 +79,25 @@ cflags   = $(optflags) $(debugflags) $(warnflags)
 cxxflags = $(optflags) $(debugflags) $(warnflags)
 optflags = -O3 -fno-fast-math
 debugflags = -ggdb3
-warnflags = 
+warnflags =
 CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -fno-common -pipe $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
-DEFS     = 
+DEFS     =
 CPPFLAGS = -DRUBY_EXTCONF_H=\"$(RUBY_EXTCONF_H)\" -I/Users/nakayamaakinori/.rbenv/versions/2.4.4/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
 ldflags  = -L. -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -fstack-protector -L/usr/local/lib
-dldflags = -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
-ARCH_FLAG = 
+dldflags = -L/Users/nakayamaakinori/.rbenv/versions/2.4.4/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress
+ARCH_FLAG =
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -dynamic -bundle
 LDSHAREDXX = $(CXX) -dynamic -bundle
 AR = libtool -static
-EXEEXT = 
+EXEEXT =
 
 RUBY_INSTALL_NAME = $(RUBY_BASE_NAME)
 RUBY_SO_NAME = ruby.2.4.4
-RUBYW_INSTALL_NAME = 
+RUBYW_INSTALL_NAME =
 RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
@@ -121,31 +121,31 @@ TOUCH = exit >
 
 #### End of system configuration section. ####
 
-preload = 
+preload =
 libpath = . $(libdir)
 LIBPATH =  -L. -L$(libdir)
-DEFFILE = 
+DEFFILE =
 
 CLEANFILES = mkmf.log
-DISTCLEANFILES = 
-DISTCLEANDIRS = 
+DISTCLEANFILES =
+DISTCLEANDIRS =
 
-extout = 
-extout_prefix = 
-target_prefix = 
-LOCAL_LIBS = 
-LIBS = $(LIBRUBYARG_SHARED)  -lpthread -lgmp -ldl -lobjc 
+extout =
+extout_prefix =
+target_prefix =
+LOCAL_LIBS =
+LIBS = $(LIBRUBYARG_SHARED)  -lpthread -lgmp -ldl -lobjc
 ORIG_SRCS = AbstractMemory.c ArrayType.c Buffer.c Call.c ClosurePool.c DataConverter.c DynamicLibrary.c Function.c FunctionInfo.c LastError.c LongDouble.c MappedType.c MemoryPointer.c MethodHandle.c Platform.c Pointer.c Struct.c StructByReference.c StructByValue.c StructLayout.c Thread.c Type.c Types.c Variadic.c ffi.c
-SRCS = $(ORIG_SRCS) 
+SRCS = $(ORIG_SRCS)
 OBJS = AbstractMemory.o ArrayType.o Buffer.o Call.o ClosurePool.o DataConverter.o DynamicLibrary.o Function.o FunctionInfo.o LastError.o LongDouble.o MappedType.o MemoryPointer.o MethodHandle.o Platform.o Pointer.o Struct.o StructByReference.o StructByValue.o StructLayout.o Thread.o Type.o Types.o Variadic.o ffi.o
 HDRS = $(srcdir)/Type.h $(srcdir)/rbffi_endian.h $(srcdir)/MappedType.h $(srcdir)/Types.h $(srcdir)/LastError.h $(srcdir)/ArrayType.h $(srcdir)/StructByReference.h $(srcdir)/extconf.h $(srcdir)/StructByValue.h $(srcdir)/AbstractMemory.h $(srcdir)/ClosurePool.h $(srcdir)/Call.h $(srcdir)/MethodHandle.h $(srcdir)/Struct.h $(srcdir)/rbffi.h $(srcdir)/Thread.h $(srcdir)/compat.h $(srcdir)/DynamicLibrary.h $(srcdir)/Platform.h $(srcdir)/Function.h $(srcdir)/LongDouble.h $(srcdir)/MemoryPointer.h $(srcdir)/Pointer.h
-LOCAL_HDRS = 
+LOCAL_HDRS =
 TARGET = ffi_c
 TARGET_NAME = ffi_c
 TARGET_ENTRY = Init_$(TARGET_NAME)
 DLLIB = $(TARGET).bundle
-EXTSTATIC = 
-STATIC_LIB = 
+EXTSTATIC =
+STATIC_LIB =
 
 TIMESTAMP_DIR = .
 BINDIR        = $(bindir)
@@ -156,7 +156,7 @@ HDRDIR        = $(rubyhdrdir)/ruby$(target_prefix)
 ARCHHDRDIR    = $(rubyhdrdir)/$(arch)/ruby$(target_prefix)
 TARGET_SO_DIR =
 TARGET_SO     = $(TARGET_SO_DIR)$(DLLIB)
-CLEANLIBS     = $(TARGET_SO) 
+CLEANLIBS     = $(TARGET_SO)
 CLEANOBJS     = *.o  *.bak
 
 all:    $(DLLIB)
