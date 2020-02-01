@@ -18,6 +18,12 @@
   </tbody>
 </table>
 
+<h2>貸し出し</h2>
+<% binding.pry %>
+<%= form_for [@book, @user_book] do |f| %>
+  <%= f.submit '借りる' %>
+<% end %>
+
 <h2>感想一覧</h2>
 <%= form_for [@book, @impression] do |f| %>
   <%= f.text_field :content %>
