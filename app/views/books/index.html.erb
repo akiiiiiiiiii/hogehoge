@@ -26,6 +26,7 @@
       <td><%= Impression.where(book_id: book.id).count %></td>
       <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
       <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+      <td></td>
       <td>
         <%= link_to '詳細', book, class: "btn btn-primary" %>
         <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
