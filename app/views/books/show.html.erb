@@ -19,8 +19,8 @@
 </table>
 
 <h2>貸し出し</h2>
-<% binding.pry %>
 <%= form_for [@book, @user_book] do |f| %>
+  <%= f.select :status, [["貸し出し中", "lending"],["借りる", "borrow"],["返す", "lend"]] %>
   <%= f.submit '借りる' %>
 <% end %>
 
