@@ -6,6 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def show
     @user = User.find_by(id: params[:id])
+    @user_book = UserBook.where(user_id: params[:id])
   end
 
   def index

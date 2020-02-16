@@ -10,6 +10,7 @@
       <td><%= Impression.where(book_id: @book.id).count %></td>
       <td><%= @book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
       <td><%= @book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+      <td></td>
       <td>
         <%= link_to '編集', edit_book_path(@book), class: "btn btn-primary" %>
         <%= link_to '削除', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
@@ -20,8 +21,17 @@
 
 <h2>貸し出し</h2>
 <%= form_for [@book, @user_book] do |f| %>
-  <%= f.select :status, [["貸し出し中", "lending"],["借りる", "borrow"],["返す", "lend"]] %>
-  <%= f.submit '借りる' %>
+  <% if @book.user_books.blank? %>
+    <%= f.select :status, [["借りる", "borrow"],["返す", "lend"]] %>
+    <%= f.submit '投稿' %>
+  <% elsif @book.user_books.last.status == "borrow" %>
+    <%= f.select :status, [["借りる", "borrow"],["返す", "lend"]] %>
+    <%= f.submit '投稿' %>
+    <p>借りてる人:<%= @book.user_books.last.user.name %></p>
+  <% elsif @book.user_books.last.status == "lend"  %>
+    <%= f.select :status, [["借りる", "borrow"],["返す", "lend"]] %>
+    <%= f.submit '投稿' %>
+  <% end %>
 <% end %>
 
 <h2>感想一覧</h2>

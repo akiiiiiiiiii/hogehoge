@@ -8,4 +8,9 @@
   <%= @user.email %>
   <br>
   <%= link_to 'プロフィール変更', edit_user_registration_path, class: "btn btn-primary" %>
+  <br>
+  借りた本:
+  <% @user_book.each do |user_book| %>
+    <br><%= user_book.book.title %>
+  <% end %>
 </div>
