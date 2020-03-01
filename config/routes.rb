@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :books do
     resources :impressions, :only => [:create, :destroy]
     resources :user_books
+    get "history"
   end
 
   root 'books#index'

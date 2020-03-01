@@ -47,6 +47,10 @@ class BooksController < ApplicationController
     redirect_to "/"
   end
 
+  def history
+    @book = Book.find(params[:book_id])
+  end
+
    private
 
    def book_params
