@@ -1,0 +1,6 @@
+<h1>履歴</h1>
+
+  <%= @book.title %>
+  <% @user_books.each do |user_book| %>
+    <br><%= user_book.created_at.strftime("%Y年%m月%d日 %H:%M") %><%= user_book.status %><%= user_book.user.name %>
+  <% end %>

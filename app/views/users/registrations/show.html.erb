@@ -1,6 +1,9 @@
 <h1>マイページ</h1>
 
 <div class="my_page">
+  <div class="paginate">
+    <%= paginate @user_book %>
+  </div>
   名前:
   <%= @user.name %>
   <br>
@@ -8,4 +11,24 @@
   <%= @user.email %>
   <br>
   <%= link_to 'プロフィール変更', edit_user_registration_path, class: "btn btn-primary" %>
+  <br>
+  借りた本:
+  <table class="table table-bordered border-primary table-hover table-sm posts_table">
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>貸借日時</th>
+        <th>貸借ステータス</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: white;">
+      <% @user_book.each do |user_book| %>
+        <tr>
+          <td><%= user_book.book.title %></td>
+          <td><%= user_book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          <td><%= user_book.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

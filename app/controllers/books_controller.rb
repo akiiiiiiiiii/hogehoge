@@ -23,6 +23,8 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @impressions = @book.impressions
     @impression = Impression.new
+    @user_books = @book.user_books
+    @user_book = UserBook.new
   end
 
   def edit
@@ -42,6 +44,11 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.destroy
     redirect_to "/"
+  end
+
+  def history
+    @book = Book.find(params[:book_id])
+    @user_books = @book.user_books
   end
 
    private
