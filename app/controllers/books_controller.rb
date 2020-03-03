@@ -23,7 +23,6 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @impressions = @book.impressions
     @impression = Impression.new
-
     @user_books = @book.user_books
     @user_book = UserBook.new
   end
@@ -49,6 +48,7 @@ class BooksController < ApplicationController
 
   def history
     @book = Book.find(params[:book_id])
+    @user_books = @book.user_books
   end
 
    private
