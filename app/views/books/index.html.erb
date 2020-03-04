@@ -33,7 +33,7 @@
           <% elsif UserBook.where(book_id: book.id).last.status == "lend" %>
             <p>借りれる</p>
           <% elsif UserBook.where(book_id: book.id).last.status == "borrow" %>
-            <p>貸し出し中</p>
+            <p>貸し出し中</p>(<%= book.user_books.last.user.name %>)
           <% end %>
         </td>
         <td>
