@@ -1,0 +1,22 @@
+<h1>ユーザ一覧</h1>
+
+<div class="table_margin">
+  <table class="table table-bordered border-primary table-hover table-sm posts_table">
+    <thead>
+      <tr>
+        <th>user_id</th>
+        <th>user_name</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: white;">
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

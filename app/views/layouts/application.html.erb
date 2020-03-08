@@ -17,6 +17,7 @@
     </div>
     <div class="ml-auto posts_button">
       <% if user_signed_in? %>
+        <%= link_to 'ユーザー一覧', users_path, class: "btn btn-primary" %>
         <%= link_to 'マイページ', "/user/#{current_user.id}", class: "btn btn-primary" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
       <% else %>
