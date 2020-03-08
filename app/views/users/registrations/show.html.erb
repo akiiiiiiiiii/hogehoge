@@ -26,7 +26,7 @@
       <tbody style="background-color: white;">
         <% @user_book.each do |user_book| %>
           <tr>
-            <td><%= user_book.book.title %></td>
+            <td><%= link_to user_book.book.title , "books/#{user_book.book.id}" %></td>
             <td><%= user_book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
             <td><%= user_book.status %></td>
           </tr>
