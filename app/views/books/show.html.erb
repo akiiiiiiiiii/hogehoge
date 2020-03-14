@@ -63,7 +63,7 @@
         <tr>
           <td><%= i.id  %></td>
           <td><%= i.content %></td>
-          <td><%= i.user.name %></td>
+          <td><%= link_to i.user.name, "/user/#{i.user.id}" %></td>
           <td><%= i.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
         </tr>
       <% end %>
