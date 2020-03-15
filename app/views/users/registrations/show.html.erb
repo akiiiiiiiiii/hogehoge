@@ -6,6 +6,10 @@
   </div>
 
 <div style="margin: 70px 0px 0px 50px;">
+  <div class="user_img">
+    <strong>画像:</strong>
+    <%= image_tag @user.img.url if @user.img? %>
+  </div>
   名前:
   <%= @user.name %>
   <br>
