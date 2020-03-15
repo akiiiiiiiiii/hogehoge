@@ -7,17 +7,23 @@
 
 <div style="margin: 70px 0px 0px 50px;">
   <div class="user_img">
-    <strong>画像:</strong>
-    <%= image_tag @user.img.url if @user.img? %>
+    img:
+    <% if @user.img? %>
+      <%= image_tag @user.img.url %>
+    <% else %>
+      <%= image_tag "default.jpg" %>
+    <% end %>
   </div>
-  名前:
-  <%= @user.name %>
-  <br>
-  アドレス:
-  <%= @user.email %>
-  <br>
-  <%= link_to 'プロフィール変更', edit_user_registration_path, class: "btn btn-primary" %>
-  <br>
+  <div class="user_profile">
+    名前:
+    <%= @user.name %>
+    <br>
+    アドレス:
+    <%= @user.email %>
+    <br>
+    <%= link_to 'プロフィール変更', edit_user_registration_path, class: "btn btn-primary" %>
+    <br>
+  </div>
 </div>
 
   <div class="table_margin">

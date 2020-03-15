@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>user_id</th>
+        <th style="width: 120px;">user_img</th>
         <th>user_name</th>
         <th>email</th>
       </tr>
@@ -13,6 +14,13 @@
       <% @users.each do |user| %>
         <tr>
           <td><%= user.id %></td>
+          <td>
+            <% if user.img? %>
+              <%= image_tag user.img.url %>
+            <% else %>
+              <%= image_tag "default.jpg" %>
+            <% end %>
+          </td>
           <td><%=link_to user.name , "/user/#{user.id}" %></td>
           <td><%= user.email %></td>
         </tr>
