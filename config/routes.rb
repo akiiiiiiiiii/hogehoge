@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     }
 
   devise_scope :user do
+    get "users", :to => "users/registrations#index"
     get "user/:id", :to => "users/registrations#show"
     get "signup", :to => "users/registrations#new"
     get "login", :to => "users/sessions#new"
