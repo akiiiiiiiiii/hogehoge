@@ -20,28 +20,67 @@
     <%= render "table_head" %>
     <tbody style="background-color: white;">
       <% @books.each do |book| %>
-      <tr>
-        <td><%= book.id %></td>
-        <td><%= book.title %></td>
-        <td><%= book.description %></td>
-        <td><%= Impression.where(book_id: book.id).count %></td>
-        <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-        <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-        <td>
-          <% if UserBook.where(book_id: book.id).blank? %>
-            <p>誰も借りてない</p>
-          <% elsif UserBook.where(book_id: book.id).last.status == "lend" %>
-            <p>借りれる</p>
-          <% elsif UserBook.where(book_id: book.id).last.status == "borrow" %>
-            <p>貸し出し中</p>(<%= book.user_books.last.user.name %>)
-          <% end %>
-        </td>
-        <td>
-          <%= link_to '詳細', book, class: "btn btn-primary" %>
-          <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
-          <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-        </td>
-      </tr>
+        <% if UserBook.where(book_id: book.id).blank? %>
+        <tr class="success">
+          <td><%= book.id %></td>
+          <td><%= book.title %></td>
+          <td><%= book.description %></td>
+          <td><%= Impression.where(book_id: book.id).count %></td>
+          <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          <td><p>誰も借りてない</p></td>
+          <td>
+            <%= link_to '詳細', book, class: "btn btn-primary" %>
+            <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
+            <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+        <% elsif UserBook.where(book_id: book.id).last.status == "lend" %>
+        <tr class="success">
+          <td><%= book.id %></td>
+          <td><%= book.title %></td>
+          <td><%= book.description %></td>
+          <td><%= Impression.where(book_id: book.id).count %></td>
+          <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          <td><p>借りれる</p></td>
+          <td>
+            <%= link_to '詳細', book, class: "btn btn-primary" %>
+            <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
+            <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+        <% elsif UserBook.where(book_id: book.id).last.status == "borrow" && UserBook.where(book_id: book.id).last.user == current_user %>
+        <tr class="danger">
+          <td><%= book.id %></td>
+          <td><%= book.title %></td>
+          <td><%= book.description %></td>
+          <td><%= Impression.where(book_id: book.id).count %></td>
+          <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          <td><p>貸し出し中</p>(<%= book.user_books.last.user.name %>)</td>
+          <td>
+            <%= link_to '詳細', book, class: "btn btn-primary" %>
+            <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
+            <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+        <% elsif UserBook.where(book_id: book.id).last.status == "borrow" %>
+        <tr class="bg-secondary text-white">
+          <td><%= book.id %></td>
+          <td><%= book.title %></td>
+          <td><%= book.description %></td>
+          <td><%= Impression.where(book_id: book.id).count %></td>
+          <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          <td><p>貸し出し中</p>(<%= book.user_books.last.user.name %>)</td>
+          <td>
+            <%= link_to '詳細', book, class: "btn btn-primary" %>
+            <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
+            <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
