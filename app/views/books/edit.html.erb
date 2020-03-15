@@ -6,8 +6,9 @@
     <tbody style="background-color: white;">
       <tr>
       <%= form_for @book do |f| %>
-        <th><%= @book.id %></th>
-        <th><%= f.text_field :title, value: @book.title %></th>
+        <td><%= @book.id %></td>
+        <td><%= f.text_field :title, value: @book.title %></td>
+        <td><%= f.file_field :img, class: "image" %></td>
         <td><%= f.text_area :description, value: @book.description %></td>
         <td><%= Impression.where(book_id: @book.id).count %></td>
         <td><%= @book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>

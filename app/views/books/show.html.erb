@@ -7,6 +7,13 @@
       <tr>
         <td><%= @book.id %></td>
         <td><%= @book.title %></td>
+        <td>
+          <% if @book.img? %>
+            <%= image_tag @book.img.url %>
+          <% else %>
+            <%= image_tag "default.jpg" %>
+          <% end %>
+        </td>
         <td><%= @book.description %></td>
         <td><%= Impression.where(book_id: @book.id).count %></td>
         <td><%= @book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>

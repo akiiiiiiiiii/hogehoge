@@ -3,17 +3,16 @@
   margin-top: 80px;
 }
 
-img {
-    width: 100px;
-    height: 100px;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 50%;
-}
-
 .user_img {
   width: 100px;
   height: 100px;
+  img {
+      width: 100px;
+      height: 100px;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 50%;
+  }
 }
 
 .user_profile {

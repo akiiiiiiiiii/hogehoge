@@ -24,6 +24,13 @@
         <tr class="success">
           <td><%= book.id %></td>
           <td><%= link_to book.title, book %></td>
+          <td>
+            <% if book.img? %>
+              <%= image_tag book.img.url %>
+            <% else %>
+              <%= image_tag "default.jpg" %>
+            <% end %>
+          </td>
           <td><%= book.description %></td>
           <td><%= Impression.where(book_id: book.id).count %></td>
           <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
@@ -38,6 +45,13 @@
         <tr class="success">
           <td><%= book.id %></td>
           <td><%= link_to book.title, book %></td>
+          <td>
+            <% if book.img? %>
+              <%= image_tag book.img.url %>
+            <% else %>
+              <%= image_tag "default.jpg" %>
+            <% end %>
+          </td>
           <td><%= book.description %></td>
           <td><%= Impression.where(book_id: book.id).count %></td>
           <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
@@ -52,6 +66,13 @@
         <tr class="danger">
           <td><%= book.id %></td>
           <td><%= link_to book.title, book %></td>
+          <td>
+            <% if book.img? %>
+              <%= image_tag book.img.url %>
+            <% else %>
+              <%= image_tag "default.jpg" %>
+            <% end %>
+          </td>
           <td><%= book.description %></td>
           <td><%= Impression.where(book_id: book.id).count %></td>
           <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
@@ -66,6 +87,13 @@
         <tr class="bg-secondary text-white">
           <td><%= book.id %></td>
           <td><%= link_to book.title, book %></td>
+          <td>
+            <% if book.img? %>
+              <%= image_tag book.img.url %>
+            <% else %>
+              <%= image_tag "default.jpg" %>
+            <% end %>
+          </td>
           <td><%= book.description %></td>
           <td><%= Impression.where(book_id: book.id).count %></td>
           <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
