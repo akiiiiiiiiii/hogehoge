@@ -1,6 +1,23 @@
 <h1>履歴</h1>
 
+<div class="table_margin">
   <%= @book.title %>
-  <% @user_books.each do |user_book| %>
-    <br><%= user_book.created_at.strftime("%Y年%m月%d日 %H:%M") %><%= user_book.status %><%= user_book.user.name %>
-  <% end %>
+  <table class="table table-bordered border-primary table-hover table-sm posts_table">
+    <thead>
+      <tr>
+        <th>created_at</th>
+        <th>status</th>
+        <th>user_name</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: white;">
+    <% @user_books.each do |user_book| %>
+      <tr>
+        <td><%= user_book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+        <td><%= user_book.status %></td>
+        <td><%= user_book.user.name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
