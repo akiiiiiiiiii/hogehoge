@@ -31,7 +31,7 @@
               <%= image_tag "default.jpg" %>
             <% end %>
           </td>
-          <td><%= book.description %></td>
+          <td><%= book.description.truncate(150) %></td>
           <td><%= Impression.where(book_id: book.id).count %></td>
           <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
           <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
@@ -52,7 +52,7 @@
               <%= image_tag "default.jpg" %>
             <% end %>
           </td>
-          <td><%= book.description %></td>
+          <td><%= book.description.truncate(150) %></td>
           <td><%= Impression.where(book_id: book.id).count %></td>
           <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
           <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
@@ -73,11 +73,11 @@
               <%= image_tag "default.jpg" %>
             <% end %>
           </td>
-          <td><%= book.description %></td>
+          <td><%= book.description.truncate(150) %></td>
           <td><%= Impression.where(book_id: book.id).count %></td>
           <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
           <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-          <td><p>貸し出し中</p>(<%= book.user_books.last.user.name %>)</td>
+          <td><p>貸し出し中</p>(<%= link_to book.user_books.last.user.name, "/user/#{book.user_books.last.user.id}" %>)</td>
           <td>
             <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
             <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
@@ -94,11 +94,11 @@
               <%= image_tag "default.jpg" %>
             <% end %>
           </td>
-          <td><%= book.description %></td>
+          <td><%= book.description.truncate(150) %></td>
           <td><%= Impression.where(book_id: book.id).count %></td>
           <td><%= book.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
           <td><%= book.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-          <td><p>貸し出し中</p>(<%= book.user_books.last.user.name %>)</td>
+          <td><p>貸し出し中</p>(<%= link_to book.user_books.last.user.name, "/user/#{book.user_books.last.user.id}" %>)</td>
           <td>
             <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
             <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
