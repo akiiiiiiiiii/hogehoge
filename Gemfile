@@ -55,6 +55,9 @@ group :development do
   gem 'kaminari'
   gem 'ransack'
   gem 'seed-fu'
+  gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+  gem "piet"
+  gem "mini_magick"
 end
 
 group :test do
