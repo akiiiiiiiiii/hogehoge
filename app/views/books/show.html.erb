@@ -54,8 +54,24 @@
   <h2>感想一覧</h2>
   <%= form_for [@book, @impression] do |f| %>
     <%= f.text_area :content %>
+    <div class="form-group row" id="star">
+      <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
+      <%= f.hidden_field :content, id: :review_star %>
+    </div>
     <%= f.submit '投稿する' %>
   <% end %>
+
+  <script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'impression[rate]',
+    half: true,
+  });
+  </script>
+
   <table class="table table-bordered border-primary table-hover table-sm posts_table">
     <thead>
       <tr>
