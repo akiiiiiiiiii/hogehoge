@@ -81,12 +81,14 @@
 
 <script>
   function ShowLength(str) {
+    var inputLength = document.getElementById("inputlength")
+
     if (str.length < 50) {
-      document.getElementById("inputlength").innerHTML = str.length + "文字";
+      inputLength.innerHTML = str.length + "文字"
       inputlength.style.color = "green";
     } else {
       {
-        document.getElementById("inputlength").innerHTML = str.length + "文字";
+        inputLength.innerHTML = str.length + "文字"
         inputlength.style.color = "red";
       }
     }
