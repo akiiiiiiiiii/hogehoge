@@ -54,7 +54,7 @@
   <h2>感想一覧</h2>
   <%= form_for [@book, @impression] do |f| %>
     <%= f.text_area :content, onkeyup: "ShowLength(value);" %>
-    <p id="inputlength">0文字</p>
+    <p id="inputlength">0文字(50文字まで)</p>
     <%= f.submit '投稿する' %>
   <% end %>
   <table class="table table-bordered border-primary table-hover table-sm posts_table">
@@ -80,7 +80,15 @@
 </div>
 
 <script>
-  function ShowLength( str ) {
-    document.getElementById("inputlength").innerHTML = str.length + "文字";
+  function ShowLength(str) {
+    if (str.length < 50) {
+      document.getElementById("inputlength").innerHTML = str.length + "文字";
+      inputlength.style.color = "green";
+    } else {
+      {
+        document.getElementById("inputlength").innerHTML = str.length + "文字";
+        inputlength.style.color = "red";
+      }
+    }
   }
 </script>
