@@ -58,6 +58,8 @@ group :development do
   gem 'carrierwave', '~> 1.3', '>= 1.3.1'
   gem "piet"
   gem "mini_magick"
+  gem 'jquery-rails'
+  gem 'jquery-turbolinks'
 end
 
 group :test do
