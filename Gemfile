@@ -49,7 +49,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-byebug'
-  gem 'bootstrap', '~>4.0.0'
+  gem 'bootstrap', '~>4.3.1'
   gem 'paranoia', '~> 2.3', '>= 2.3.1'
   gem 'devise'
   gem 'kaminari'
